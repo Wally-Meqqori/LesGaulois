@@ -23,7 +23,12 @@ public class Gaulois {
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom() );
-		romain.recevoirCoup(force / 3);
+		romain.recevoirCoup((force / 3)*effetPotion);
+	}
+	
+	public void boirePotion(int forcePotion) {
+		this.effetPotion = forcePotion;
+		this.parler("Merci Druide, je sens que ma force est "+this.effetPotion+" fois décuplée !");
 	}
 
 	@Override
@@ -36,6 +41,7 @@ public class Gaulois {
 		Romain minus = new Romain("minus",5);
 		System.out.println("Le gaulois " + asterix.getNom() + " vient d'etre cree.");
 		asterix.parler("Bonjour");
+		asterix.boirePotion(5);
 		asterix.frapper(minus);
 	}
 }
