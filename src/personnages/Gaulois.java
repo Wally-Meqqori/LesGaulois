@@ -18,11 +18,11 @@ public class Gaulois {
 		return "Le Gaulois "+ nom+ " : ";
 	}
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "«" + texte + "»");
+		System.out.println(prendreParole() + " â€œ " + texte + " â€");
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + "Envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom() );
 		romain.recevoirCoup(force / 3);
 	}
 
@@ -32,9 +32,10 @@ public class Gaulois {
 	}
 
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("asterix",8);
-		System.out.println(asterix);
-		System.out.println("Le gaulois " + asterix.getNom() + " vient d'être créé.");
+		Gaulois asterix = new Gaulois("Asterix",8);
+		Romain minus = new Romain("minus",5);
+		System.out.println("Le gaulois " + asterix.getNom() + " vient d'etre cree.");
 		asterix.parler("Bonjour");
+		asterix.frapper(minus);
 	}
 }

@@ -1,6 +1,6 @@
 
 package personnages;
-import java.util.*;
+import java.util.Random;
 
 public class Druide {
 	private String nom;
@@ -12,14 +12,14 @@ public class Druide {
 		this.nom = nom;
 		this.effetPotionMin = effetPotionMin;
 		this.effetPotionMax = effetPotionMax;
-		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " ‡ " + effetPotionMax + ".");
+		parler("Bonjour, je suis le druide " + nom + " et ma potion peut aller d'une force " + effetPotionMin + " ÔøΩ " + effetPotionMax + ".");
 	}
 	public String getNom() {
 		return nom;
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "´ " + texte + "ª");
+		System.out.println(prendreParole() + "‚Äú " + texte + " ‚Äù");
 	}
 
 	public void preparerPotion() {
@@ -27,6 +27,10 @@ public class Druide {
 	}
 	private String prendreParole() {
 		return "Le druide " + nom + " : ";
+	}
+	public static void main(String[] args) {
+		Druide panoramix = new Druide("Panoramix",0,9);
+
 	}
 }
 

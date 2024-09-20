@@ -12,24 +12,29 @@ public class Romain {
 	public String getNom() {
 		return nom;
 	}
+	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + " â€œ " + texte + " â€");
 	}
+	
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
 	}
+	
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force > 0) {
-			parler("Aïe");
+			parler("Aie");
 		} else {
 			parler("J'abandonne...");
 		}
 	}
+	
 	public static void main(String[] args) {
 		Romain minus  = new Romain("Minus",6);
-		System.out.println("Le romain " + minus.getNom() + " vient d'être créé.");
+		System.out.println("Le romain " + minus.getNom() + " vient d'etre cree.");
 		minus.parler("Bonjour");
+		minus.recevoirCoup(4);
 	}
 }
 
