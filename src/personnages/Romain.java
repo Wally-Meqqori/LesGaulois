@@ -17,11 +17,11 @@ public class Romain {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() +" " +texte + " ");
+		System.out.println(prendreParole() +"« " +texte + " »");
 	}
 	
 	private String prendreParole() {
-		return  "Le soldat " + nom ;
+		return  "Le Romain " + nom + " : " ;
 	}
 	
 	public void recevoirCoup(int forceCoup) {
@@ -40,31 +40,32 @@ public class Romain {
 	private void  ajouterEquipement(Equipement nouveauEquipement) {
 		equipement[nbEquipement] = nouveauEquipement;
 		nbEquipement ++;
-		this.parler(" s'equipe avec un " + nouveauEquipement);
+		System.out.println("Le soldat "+ this.nom + " s'equipe avec un " + nouveauEquipement +".");
 	}
 	
 	public void sEquiper(Equipement nouveauEquipement) {
+		
 		switch (this.nbEquipement) {
 			case 0 :
 				ajouterEquipement(nouveauEquipement);
 				break;
 			case 1 :
 				if(equipement[0] == nouveauEquipement) {
-					this.parler("porte déjà un " + nouveauEquipement );
+					System.out.println("Le soldat " + this.nom + " possède déjà un " + nouveauEquipement +" !" );
 				}
 				else {
 					ajouterEquipement(nouveauEquipement);
 				}
 				break;
 			case 2 : 
-				System.out.println(this.nom + " est déjà bien protégé.");
+				System.out.println("Le soldat " + this.nom + " est déjà bien protégé.");
 				break;
 		}
 	}
 	
 	public static void main(String[] args) {
 		Romain minus  = new Romain("Minus",6);
-		System.out.println("Le romain " + minus.getNom() + " vient d'etre cree.");
+		System.out.println("Le Romain " + minus.getNom() + " vient d'etre cree.");
 		Equipement bouclier = Equipement.BOUCLIER;
 		Equipement casque = Equipement.CASQUE;
 		minus.sEquiper(casque);

@@ -20,10 +20,7 @@ public class Druide {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "â€œ " + texte + " â€�");
-	}
-	public void preparerPotion(String texte) {
-		System.out.println(prendreParole() + "â€œ " + texte + " â€�");
+		System.out.println(prendreParole() + "« " + texte + " »");
 	}
 
 	public void preparerPotion() {

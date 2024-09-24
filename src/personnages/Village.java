@@ -27,7 +27,7 @@ public class Village {
 	}
 	
 	public void afficherVillageois() {
-		System.out.println("Dans village du chef "+ this.chef.getNom() + " vivent les légendaires gaulois :");
+		System.out.println("Dans village du chef "+ this.chef.getNom() + " vivent les lÃ©gendaires gaulois :");
 		for(int i = 0 ; i < this.nbVillageois;i++) {
 			System.out.println("- " + villageois[i].getNom());
 		}
@@ -41,17 +41,17 @@ public class Village {
 		return nom;
 	}
 	public static void main(String[] args) {
-		Village village = new Village("Village des irréductibles",30);
+		Village village = new Village("Village des irreductibles",30);
 		//Gaulois gaulois = village.trouverHabitant(30)
 		//Erreur car 30 est un indice en dehors du tableau
-		Gaulois asterix = new Gaulois("Astérix",8);
-		Gaulois obelix = new Gaulois("Obélix",25);
+		Gaulois asterix = new Gaulois("AstÃ©rix",8);
+		Gaulois obelix = new Gaulois("ObÃ©lix",25);
 		Chef abraracourcix = new Chef("Abraracourcix",6,village);
 		village.setChef(abraracourcix);
 		village.ajouterHabitant(asterix);
 		//Gaulois gaulois = village.trouverHabitant(1);
 		//System.out.println(gaulois);
-		//Cela affiche la référence de notre gaulois ajouté auparavant, soit Astérix.
+		//Cela affiche la rÃ©fÃ©rence de notre gaulois ajoutÃ© auparavant, soit AstÃ©rix.
 		village.ajouterHabitant(obelix);
 		village.afficherVillageois();
 	}
