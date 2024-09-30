@@ -1,5 +1,5 @@
 package personnages;
-
+import lieux.Musee;
 
 public class Gaulois {
 	private String nom;
@@ -48,6 +48,22 @@ public class Gaulois {
 		this.parler("Merci Druide, je sens que ma force est "+this.effetPotion+" fois décuplée !");
 	}
 
+	public void faireUneDonation(Musee musee) {
+		if(this.nbTrophees > 0) {
+			String texte = "Je donne au musée tous mes trophées :";
+			
+			for(int i = 0; i < this.nbTrophees; i++) {
+				texte += "\n - " + this.trophees[i];
+				musee.donnerTrophee(this, this.trophees[i]);
+			}
+			
+			this.parler(texte);
+		}
+		else {
+			this.parler("Je n'ai aucun trophée à donner.");
+		}
+	}
+	
 	
 	@Override
 	public String toString() {
@@ -56,8 +72,8 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix",8);
-
 		Romain minus = new Romain("Minus",6);
+
 		System.out.println("Le gaulois " + asterix.getNom() + " vient d'être créé.");
 		asterix.parler("Bonjour");
 		asterix.boirePotion(5);
