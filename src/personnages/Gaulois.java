@@ -49,20 +49,23 @@ public class Gaulois {
 	}
 
 	public void faireUneDonation(Musee musee) {
-		if(this.nbTrophees > 0) {
-			String texte = "Je donne au musée tous mes trophées :";
-			
-			for(int i = 0; i < this.nbTrophees; i++) {
-				texte += "\n - " + this.trophees[i];
-				musee.donnerTrophee(this, this.trophees[i]);
-			}
-			
-			this.parler(texte);
-		}
-		else {
-			this.parler("Je n'ai aucun trophée à donner.");
-		}
+	    if (this.nbTrophees > 0) {
+	        StringBuilder texte = new StringBuilder();
+	        texte.append("Je donne au musée tous mes trophées :");
+
+	        for (int i = 0; i < this.nbTrophees; i++) {
+	            if (this.trophees[i] != null) { 
+	                texte.append("\n - ").append(this.trophees[i]);
+	                musee.donnerTrophee(this, this.trophees[i]);
+	            }
+	        }
+
+	        this.parler(texte.toString());
+	    } else {
+	        this.parler("Je n'ai aucun trophée à donner.");
+	    }
 	}
+
 	
 	
 	@Override

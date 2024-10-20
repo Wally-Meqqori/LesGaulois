@@ -26,16 +26,19 @@ public class Musee {
 
 	
 	public String extraireInstructionsCaml() {
-		StringBuilder resultBuilder = new StringBuilder();
-		resultBuilder.append("let musee = [ ");
-		
-		for(int i = 0; i < this.nbTrophee; i++) {
-			resultBuilder.append("(\"" + this.trophee[i].donnerNom() + "\", \"" + this.trophee[i].getEquipement() + "\")");
-			if(i < this.nbTrophee-1) { resultBuilder.append("; "); }
-		}
-		
-		resultBuilder.append(" ] ;;");
-		System.out.println(resultBuilder);
-		return resultBuilder.toString();
+	    StringBuilder resultBuilder = new StringBuilder();
+	    resultBuilder.append("let musee = [\n");
+
+	    for (int i = 0; i < this.nbTrophee; i++) {
+
+	        resultBuilder.append("\t\"" + this.trophee[i].donnerNom() + "\", \"" + this.trophee[i].getEquipement() + "\"");
+
+	        if (i < this.nbTrophee - 1) {
+	            resultBuilder.append(";\n"); 
+	        }
+	    }
+
+	    resultBuilder.append("\n]"); 
+	    return resultBuilder.toString();
 	}
 }
