@@ -12,8 +12,8 @@ public class Scenario {
 		Druide druide = new Druide("Panoramix", 5, 10);
 		druide.parler("Je vais aller prï¿½parer une petite potion...");
 		druide.preparerPotion();
-		Gaulois obelix = new Gaulois("Obï¿½lix", 25);
-		Gaulois asterix = new Gaulois("Astï¿½rix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		Gaulois asterix = new Gaulois("Astérix", 8);
 		druide.booster(obelix);
 		obelix.parler("Par Bï¿½lï¿½nos, ce n'est pas juste !");
 		druide.booster(asterix);
